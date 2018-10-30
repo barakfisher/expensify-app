@@ -10,7 +10,7 @@ module.exports = (env) =>{
     return {
         entry : './src/app.js', //starting point
         output : {
-            path :path.join(__dirname,'public'), //absolute path 
+            path :path.join(__dirname,'public','dist'), //absolute path 
             filename:'bundle.js'
         },
         module : {
@@ -52,7 +52,8 @@ module.exports = (env) =>{
 
         devServer: {
             contentBase : path.join(__dirname,'public'),
-            historyApiFallback: true // telling the web-server for all 404 pages show the index.html file
+            historyApiFallback: true, // telling the web-server for all 404 pages show the index.html file
+            publicPath: '/dist'
         }
     };
 };
