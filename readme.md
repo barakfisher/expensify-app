@@ -3,8 +3,10 @@
 git init - Create a new git repo
 git status - View the changes to your project code
 git add - Add files to staging area
-git commit - Creates a new commit with files from stagin area
+git commit -m - Creates a new commit with files from stagin area
 git log - View recent commits
+git commit -am - if there are no new files we dont need to add  
+    everything just use the -am flag
 
 #SSH
 ls - will show all files in the directory
