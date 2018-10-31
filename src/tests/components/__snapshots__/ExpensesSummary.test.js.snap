@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render few expenses summery currectly 1`] = `
+<div>
+  <h1>
+    View 
+    3
+     
+    expenses
+     totaling 
+    $290.00
+     
+  </h1>
+</div>
+`;
+
+exports[`should render one expense summery currectly 1`] = `
+<div>
+  <h1>
+    View 
+    1
+     
+    expense
+     totaling 
+    $290.00
+     
+  </h1>
+</div>
+`;
