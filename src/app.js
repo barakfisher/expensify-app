@@ -9,6 +9,8 @@ import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css'; // this will reset all browsers default styling
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
+import './firebase/firebase';
+
 
 
 const store = configureStore();

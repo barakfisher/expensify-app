@@ -169,6 +169,32 @@
 
       installing numeral JS for
           yarn add numeral@2.0.6
+
+      firebase by google - database:
+      1. create a new project on firebase
+      2. set up the DB rules : click on database tab -> then add '/data' to the url -> then go to rules
+      3. go to project overview and click <> symbol to add it to your web app
+      4. install using the cli :
+          yarn add firebase@4.2.0
+      5. create firebase folder and file
+      6. import and paste the config script to the file
+
+    install redux-thunk
+          yarn add redux-thunk@2.2.0
+          on our configure store file
+           - import apply middlewere from 'redux'
+           - import thunk from 'redux thunk'
+
+    install redux mock-store for simulating the store while testing
+          yarn add redux-mock-store@1.2.3
+
+    for recognize if in dev env or production - install  cross-env
+          yarn add --dev cross-env@5.0.5
+
+    for reading .env files install dotenv
+          yarn arr --dev dotenv@4.0.0
+
+
  -->
  <!-- 
    yarv run dev-server  wil open on for local 8080 (dev env)
