@@ -7,16 +7,13 @@ const webpack = require('webpack');
 
 //installing cross env and setting it up on package.json allow us to access
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-console.log("asssssssssssssssssssssssssssssssssssssssssssssss",process.env.NODE_ENV);
+console.log("Current Env: ",process.env.NODE_ENV);
 
+// Setting up the current environment (production not included)
 if (process.env.NODE_ENV === 'test'){
     require('dotenv').config( {path:'.env.test'} );
-    // DotEnv.config( {path:'.env.test'} );
-
 } else if( process.env.NODE_ENV === 'development'){
     require('dotenv').config({path:'.env.development'});
-    // DotEnv.config( {path:'.env.development'} );
-
 }
 
 module.exports = (env) =>{
@@ -63,7 +60,7 @@ module.exports = (env) =>{
             CSSExtract,
             new webpack.DefinePlugin({
                 'process.env.FIREBASE_API_KEY' : JSON.stringify(process.env.FIREBASE_API_KEY),
-                'process.env FIREBASE_AUTH_DOMAIN ' : JSON.stringify(process.env. FIREBASE_AUTH_DOMAIN ),
+                'process.env FIREBASE_AUTH_DOMAIN ' : JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
                 'process.env.FIREBASE_DATABASE_URL' : JSON.stringify(process.env.FIREBASE_DATABASE_URL),
                 'process.env.FIREBASE_PROJECT_ID' : JSON.stringify(process.env.FIREBASE_PROJECT_ID),
                 'process.env.FIREBASE_STORRAGE_BUCKET' : JSON.stringify(process.env.FIREBASE_STORRAGE_BUCKET),
