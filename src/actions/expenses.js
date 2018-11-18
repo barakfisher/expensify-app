@@ -45,3 +45,26 @@ export const editExpense = (id, updates) => ({
     // action generator returns a function
     //component dispatches the function (succsessfully thanks to middleware from. redux-thunk)
     //redux store chnmges
+
+//SET_EXPENSES
+export const setExpenses = (expenses)=>({
+    type: 'SET_EXPENSES',
+    expenses
+});
+
+
+//
+export const startSetExpenses = () =>{
+    return (dispatch) => {
+        return database.ref('expenses').once('value').then((snapshot) =>{
+            const expenses = [];
+            snapshot.forEach((childSnapshot) => {
+                expenses.push({
+                    id:childSnapshot.key,
+                    ...childSnapshot.val()
+                });
+            });
+            dispatch(setExpenses(expenses));
+        });
+    };
+};
