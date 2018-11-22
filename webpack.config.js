@@ -20,7 +20,7 @@ module.exports = (env) =>{
     const isProduction = env === 'production';
     const CSSExtract = new ExtractTextPlugin('styles.css');
     return {
-        entry : './src/app.js', //starting point
+        entry : ['babel-polyfil', './src/app.js'], //starting point
         output : {
             path :path.join(__dirname,'public','dist'), //absolute path 
             filename:'bundle.js'

@@ -76,16 +76,18 @@ export default class ExpenseForm extends React.Component {
 
     render (){
         return (
-            <div>
-                <form onSubmit={this.onSubmit}>
+                <form className='form' onSubmit={this.onSubmit}>
+                {this.state.error && <p className='form__error'> {this.state.error} </p> }
+                        <input
+                            className='text-input'
+                            type='text'
+                            placeholder='Description'
+                            autoFocus
+                            value={this.state.description}
+                            onChange= {this.onDescriptionChange}
+                        />
                     <input
-                        type='text'
-                        placeholder='Description'
-                        autoFocus
-                        value={this.state.description}
-                        onChange= {this.onDescriptionChange}
-                    />
-                    <input
+                        className='text-input'
                         type='text'
                         placeholder='Amount'
                         value={this.state.amount}
@@ -102,15 +104,13 @@ export default class ExpenseForm extends React.Component {
                     <textarea
                         placeholder='add a note for your expese'
                         value={this.state.note}
-
+                        className='text-area'
                         onChange={this.onNoteChange}
                     />
-                    <button> Add Expense </button>
-                    {this.state.error && <p> {this.state.error} </p> }
-                        
-                    
+                    <div>
+                        <button className='button'> Add Expense </button>
+                    </div>
                 </form>
-            </div>
         );
     }
 }
